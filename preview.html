@@ -72,389 +72,374 @@
     </div>
     
     
-    
-    
-    
-    <form method="post" action="<sm:getMainURL/>" name="CensitoList" >
-<table style="width: 100%; text-align: center;"  >
-    <tr>
-        <td style="text-align: center; padding: 5px;" class="OrizTitoloH2O" >Censimento esercente</td>
+    <html><head></head><body><form method="post" action="<sm:getMainURL/>" name="CensitoList">
+<table style="width: 100%; text-align: center">
+    <tbody><tr>
+        <td class="OrizTitoloH2O" style="text-align: center">Censimento esercente</td>
     </tr>
     <tr>
-        <td style="padding: 5px;" colspan="4"><br/></td>
+        <td colspan="4"><br></td>
     </tr>
-</table>
-<%
+</tbody></table>
+&lt;%
 	if (exception != null) {
-%>
-<table style="border: 1px solid; border-collapse: collapse; border-spacing: 0px; padding: 5px; border-color: #CCCCCC; text-align: center;"     >
-	<tr>
-		<td style="height: 35px; text-align: center; padding: 5px;" class="titolotab"  ><img style="width: 25px; height: 22px; margin-left: 10px; margin-right: 10px; vertical-align: middle;"
-			src="/img/h2o/triangolo.gif"   
-			><br/> <%=exception.getMessage()%>
+%&gt;
+<table bordercolor="#CCCCCC" style="border: 1px solid #ddd; border-spacing: 0px; padding: 5px; text-align: center">
+	<tbody><tr>
+		<td class="titolotab" style="height: 35px; text-align: center"><img src="/img/h2o/triangolo.gif" hspace="10" style="width: 25px; height: 22px; text-align: absmiddle"><br> &lt;%=exception.getMessage()%&gt;
 		</td>
 	</tr>
 	<tr>
-		<td style="padding: 5px;" colspan="2"><br/>
+		<td colspan="2"><br>
 		</td>
 	</tr>
     <tr>
-		<td style="text-align: center; padding: 5px;"   class="VertDxBassa">
-			<sm:includeIfEventAllowed eventName="Indietro" eventDescription="Indietro">
-				<input type="Button" name="<sm:getEventParamName/>" value="<sm:getEventParamValue/>" 
-					style="cursor:hand" class="Bottone" onClick="JavaScript:CallAddress('<sm:getMainURL/>', '<sm:getEventParamName/>', '')">
-			</sm:includeIfEventAllowed>
+		<td class="VertDxBassa" style="text-align: center">
+			<sm:includeifeventallowed eventname="Indietro" eventdescription="Indietro">
+				<input type="Button" name="<sm:getEventParamName/>" value="<sm:getEventParamValue/>" style="cursor:hand" class="Bottone" onclick="JavaScript:CallAddress('<sm:getMainURL/>', '<sm:getEventParamName/>', '')">
+			</sm:includeifeventallowed>
 		</td>
 	</tr>	
-</table>
-<%
+</tbody></table>
+&lt;%
 	} else {
-%>
-<table style="width: 100%; text-align: center;"  >
-	<tr>
-		<td style="padding: 5px;" colspan="2" class="TitoloH2O">Ricerca esercenti censiti</td>
+%&gt;
+<table style="width: 100%; text-align: center">
+	<tbody><tr>
+		<td colspan="2" class="TitoloH2O">Ricerca esercenti censiti</td>
     </tr>
    	<tr>
-		<td style="padding: 5px;" class="VertSxBassa">Ragione sociale</td>
-		<td style="padding: 5px;" class="VertDxBassa">
-			<input style="font-size: 50;" type="text"  maxlength="50" name="txtRagioneSociale" value="<%= (censitoFilter.getRagioneSociale() == null) ? "" : censitoFilter.getRagioneSociale() %>">
+		<td class="VertSxBassa">Ragione sociale</td>
+		<td class="VertDxBassa">
+			<input type="text" maxlength="50" name="txtRagioneSociale" value="<%= (censitoFilter.getRagioneSociale() == null) ? " "="" :="" censitofilter.getragionesociale()="" %="" style="font-size: 50px">"&gt;
 		</td>
 	</tr>
    	<tr>
-		<td style="padding: 5px;" class="VertSxBassa">Partita IVA</td>
-		<td style="padding: 5px;" class="VertDxBassa">
-			<input style="font-size: 11;" type="text"  maxlength="11" name="txtPartitaIva" value="<%= (censitoFilter.getPartitaIva() == null) ? "" : censitoFilter.getPartitaIva() %>">
+		<td class="VertSxBassa">Partita IVA</td>
+		<td class="VertDxBassa">
+			<input type="text" maxlength="11" name="txtPartitaIva" value="<%= (censitoFilter.getPartitaIva() == null) ? " "="" :="" censitofilter.getpartitaiva()="" %="" style="font-size: 11px">"&gt;
 		</td>
 	</tr>      		
     <tr>
-      	<td style="padding: 5px;" class="VertSxBassa">Data censimento tra il</td>
-      	<td style="padding: 5px;" class="VertDxBassa">
+      	<td class="VertSxBassa">Data censimento tra il</td>
+      	<td class="VertDxBassa">
       		<table>
-      			<tr>
+      			<tbody><tr>
       				<td>
-       					<input style="font-size: 13px;" type="text" onBlur="controlDay(this);" onKeyUp="changeFocusOffset (this, 2, 1);"  maxlength="2" name="txtDataCensDaD" value="<%= (censitoFilter.getDataCensimentoDa() == null) ? "" : Utils.SubstringNoExceedStringLenght(censitoFilter.getDataCensimentoDa(), 6, 8) %>">
+       					<input type="text" onblur="controlDay(this);" onkeyup="changeFocusOffset (this, 2, 1);" maxlength="2" name="txtDataCensDaD" value="<%= (censitoFilter.getDataCensimentoDa() == null) ? " "="" :="" utils.substringnoexceedstringlenght(censitofilter.getdatacensimentoda(),="" 6,="" 8)="" %="" style="font-size: 13px">"&gt;
         			</td>
      				<td>/</td>
 					<td>
-       					<input style="font-size: 13px;" type="text" onBlur="controlMonth(this);" onKeyUp="changeFocusOffset (this, 2, 1);"  maxlength="2" name="txtDataCensDaM" value="<%= (censitoFilter.getDataCensimentoDa() == null) ? "" : Utils.SubstringNoExceedStringLenght(censitoFilter.getDataCensimentoDa(), 4, 6) %>">
+       					<input type="text" onblur="controlMonth(this);" onkeyup="changeFocusOffset (this, 2, 1);" maxlength="2" name="txtDataCensDaM" value="<%= (censitoFilter.getDataCensimentoDa() == null) ? " "="" :="" utils.substringnoexceedstringlenght(censitofilter.getdatacensimentoda(),="" 4,="" 6)="" %="" style="font-size: 13px">"&gt;
         			</td>
       				<td>/</td>
       				<td>
-       					<input style="font-size: 18px;" type="text" onBlur="controlYear(this);" onKeyUp="changeFocusOffset (this, 4, 1);"  maxlength="4" name="txtDataCensDaY" value="<%= (censitoFilter.getDataCensimentoDa() == null) ? "" : Utils.SubstringNoExceedStringLenght(censitoFilter.getDataCensimentoDa(), 0, 4) %>">
+       					<input type="text" onblur="controlYear(this);" onkeyup="changeFocusOffset (this, 4, 1);" maxlength="4" name="txtDataCensDaY" value="<%= (censitoFilter.getDataCensimentoDa() == null) ? " "="" :="" utils.substringnoexceedstringlenght(censitofilter.getdatacensimentoda(),="" 0,="" 4)="" %="" style="font-size: 18px">"&gt;
         			</td>
-        			<td style="padding: 5px;" class="VertSxBassa">&nbsp;&nbsp; e il &nbsp;&nbsp;</td>
+        			<td class="VertSxBassa">&nbsp;&nbsp; e il &nbsp;&nbsp;</td>
         			<td>
-       					<input style="font-size: 13px;" type="text" onBlur="controlDay(this);" onKeyUp="changeFocusOffset (this, 2, 1);"  maxlength="2" name="txtDataCensAD" value="<%= (censitoFilter.getDataCensimentoA() == null) ? "" : Utils.SubstringNoExceedStringLenght(censitoFilter.getDataCensimentoA(), 6, 8) %>">
+       					<input type="text" onblur="controlDay(this);" onkeyup="changeFocusOffset (this, 2, 1);" maxlength="2" name="txtDataCensAD" value="<%= (censitoFilter.getDataCensimentoA() == null) ? " "="" :="" utils.substringnoexceedstringlenght(censitofilter.getdatacensimentoa(),="" 6,="" 8)="" %="" style="font-size: 13px">"&gt;
         			</td>
      				<td>/</td>
 					<td>
-       					<input style="font-size: 13px;" type="text" onBlur="controlMonth(this);" onKeyUp="changeFocusOffset (this, 2, 1);"  maxlength="2" name="txtDataCensAM" value="<%= (censitoFilter.getDataCensimentoA() == null) ? "" : Utils.SubstringNoExceedStringLenght(censitoFilter.getDataCensimentoA(), 4, 6) %>">
+       					<input type="text" onblur="controlMonth(this);" onkeyup="changeFocusOffset (this, 2, 1);" maxlength="2" name="txtDataCensAM" value="<%= (censitoFilter.getDataCensimentoA() == null) ? " "="" :="" utils.substringnoexceedstringlenght(censitofilter.getdatacensimentoa(),="" 4,="" 6)="" %="" style="font-size: 13px">"&gt;
         			</td>
       				<td>/</td>
       				<td>
-       					<input style="font-size: 18px;" type="text" onBlur="controlYear(this);" onKeyUp="changeFocusOffset (this, 4, 1);"  maxlength="4" name="txtDataCensAY" value="<%= (censitoFilter.getDataCensimentoA() == null) ? "" : Utils.SubstringNoExceedStringLenght(censitoFilter.getDataCensimentoA(), 0, 4) %>">
+       					<input type="text" onblur="controlYear(this);" onkeyup="changeFocusOffset (this, 4, 1);" maxlength="4" name="txtDataCensAY" value="<%= (censitoFilter.getDataCensimentoA() == null) ? " "="" :="" utils.substringnoexceedstringlenght(censitofilter.getdatacensimentoa(),="" 0,="" 4)="" %="" style="font-size: 18px">"&gt;
         			</td>	
         		</tr>
-        	</table>
+        	</tbody></table>
       	</td>
     </tr>
     <tr>
-      	<td style="padding: 5px;" class="VertSxBassa">Gruppo Commerciale</td>
-      	<td style="padding: 5px;" class="VertDxBassa">
+      	<td class="VertSxBassa">Gruppo Commerciale</td>
+      	<td class="VertDxBassa">
         	<select name="cmbIdGruppo">
-        		<option value="" <%= (censitoFilter.getIdGruppo() == null) ? "selected" : "" %>>Qualsiasi</option>
-				<% for (int i=0; i<lstAppartenenza.size(); i++ ) { %>
-					<option value=<%=lstAppartenenza.get(i).getIdgruppo() %> <%= ((censitoFilter.getIdGruppo() != null) && (censitoFilter.getIdGruppo().equals(lstAppartenenza.get(i).getIdgruppo()))) ? "selected" : "" %>><%=lstAppartenenza.get(i).getDescrizione() %></option>
-				<%} %>        		
+        		<option value="" <%="(censitoFilter.getIdGruppo()" =="null)" ?="" "selected"="" :="" ""="" %="">&gt;Qualsiasi</option>
+				&lt;% for (int i=0; i
+					<option value="<%=lstAppartenenza.get(i).getIdgruppo()" %=""> &lt;%= ((censitoFilter.getIdGruppo() != null) &amp;&amp; (censitoFilter.getIdGruppo().equals(lstAppartenenza.get(i).getIdgruppo()))) ? "selected" : "" %&gt;&gt;&lt;%=lstAppartenenza.get(i).getDescrizione() %&gt;</option>
+				&lt;%} %&gt;        		
         	</select>
       	</td>			    
     </tr>
    	<tr>
-		<td style="padding: 5px;" class="VertSxBassa">Stato</td>
-		<td style="padding: 5px;" class="VertDxBassa">
+		<td class="VertSxBassa">Stato</td>
+		<td class="VertDxBassa">
 			<select name="cmbIsLavoratoSccQa">
-        		<option value="" <%= (censitoFilter.getIsLavoratoSccQa() == null) ? "selected" : "" %>>Qualsiasi</option>
-				<option value="0" <%= ((censitoFilter.getIsLavoratoSccQa() != null) && (censitoFilter.getIsLavoratoSccQa().equals(new Long("0")))) ? "selected" : "" %>>Da lavorare</option>
-      			<option value="1" <%= ((censitoFilter.getIsLavoratoSccQa() != null) && (censitoFilter.getIsLavoratoSccQa().equals(new Long("1")))) ? "selected" : "" %>>Lavorato</option>
+        		<option value="" <%="(censitoFilter.getIsLavoratoSccQa()" =="null)" ?="" "selected"="" :="" ""="" %="">&gt;Qualsiasi</option>
+				<option value="0" <%="((censitoFilter.getIsLavoratoSccQa()" !="null)" &&="" (censitofilter.getislavoratosccqa().equals(new="" long("0"))))="" ?="" "selected"="" :="" ""="" %="">&gt;Da lavorare</option>
+      			<option value="1" <%="((censitoFilter.getIsLavoratoSccQa()" !="null)" &&="" (censitofilter.getislavoratosccqa().equals(new="" long("1"))))="" ?="" "selected"="" :="" ""="" %="">&gt;Lavorato</option>
 			</select>
 		</td>
 	</tr>	
-</table>
-<sm:includeIfEventAllowed eventName="Filter" eventDescription="Ricerca">
-<table style="width: 100%; text-align: center;"  >
-     <tr>
-		<td style="text-align: center; padding: 5px;"  class="VertDxBassa">
-			<input type="Button" name="<sm:getEventParamName/>" value="<sm:getEventParamValue/>" 
-				style="cursor:hand" class="Bottone" onClick="JavaScript:ValidateForm('<sm:getMainURL/>', '<sm:getEventParamName/>', '')">
+</tbody></table>
+<sm:includeifeventallowed eventname="Filter" eventdescription="Ricerca">
+<table style="width: 100%; text-align: center">
+     <tbody><tr>
+		<td class="VertDxBassa" style="text-align: center">
+			<input type="Button" name="<sm:getEventParamName/>" value="<sm:getEventParamValue/>" style="cursor:hand" class="Bottone" onclick="JavaScript:ValidateForm('<sm:getMainURL/>', '<sm:getEventParamName/>', '')">
 		</td>        		
      </tr>
-</table>
-</sm:includeIfEventAllowed>
-<table style="text-align: center;" >
-    <tr>
-        <td style="padding: 5px;" colspan="31" >
-            <br/>
+</tbody></table>
+</sm:includeifeventallowed>
+
+	&lt;%if (Utils.getEmptyString(errorMessage).equals("")) {%&gt;    
+		
+		&lt;% for (int i=0; i<lstcensitoitemlist.size(); i++)="" {="" censitoitemlist="" c="lstCensitoItemList.get(i);" appeseadeguataverifica="" av="c.getAppEseAdeguataVerifica();" %="">
+				
+			&lt;%if (c.getIsLavoratoSccQa().equals(new Long("0"))) {%&gt;
+				</lstcensitoitemlist.size();>
+			&lt;%} else { %&gt;
+				
+			&lt;%} %&gt;
+				
+				&lt;%if (c.getIsLavoratoSccQa().equals(new Long("0"))) {%&gt;
+					
+				&lt;%} else { %&gt;
+					
+				&lt;%} %&gt;
+	           	&lt;%if (av.getPraticaAccclAz() != null) {%&gt;
+	           		
+				&lt;%} else { %&gt;
+					
+	           	&lt;%} %&gt;
+	           	
+				&lt;%if (av.getIsProdottoPosRifiutato()) {%&gt;
+					
+				&lt;%} else { %&gt;
+					
+				&lt;%} %&gt;			
+	           	&lt;%if (av.getPraticaAccclPf() != null) {%&gt;
+	           		
+				&lt;%} else { %&gt;
+					
+	           	&lt;%} %&gt;
+	           	
+	           	&lt;% if(c.getIsInstalUrgente().equals(new Long("1"))) {%&gt;
+	           		
+	           	&lt;%} else { %&gt;
+	           		
+	           	&lt;%} %&gt;				
+				
+				&lt;%if (c.getIsBedAndBreakfast().equals(Long.valueOf(0))) {%&gt;
+					
+				&lt;%} else { %&gt;
+					
+				&lt;%} %&gt;
+				
+				&lt;%if (av.getIsIdSoggettPfCollegatoIdSoggettoAz()) {%&gt;
+					
+				&lt;%} else { %&gt;
+					
+				&lt;%} %&gt;
+				
+				&lt;%if (c.getIsExtPuntoVendita().equals(new Long("0"))) {%&gt;
+					
+				&lt;%} else { %&gt;
+					
+				&lt;%} %&gt;
+				&lt;%if ((c.getManualEntry() != null) &amp;&amp; (c.getManualEntry().equals(new Long("1")))) { %&gt;
+					
+				&lt;%} else { %&gt;
+					
+				&lt;%} %&gt;				
+				&lt;%if (c.getIsQaAgenteErrato().equals(new Long("1"))) { %&gt;
+					
+				&lt;%} else { %&gt;
+					
+				&lt;%} %&gt;	
+				
+		&lt;%} %&gt;
+	&lt;%} else {%&gt;
+			
+	&lt;%} %&gt;
+<table style="text-align: center">
+    <tbody><tr>
+        <td colspan="31">
+            <br>
         </td>
     </tr>
 	<tr>
-      	<td style="padding: 5px;" colspan="31" class="TitoloH2O">Elenco esercenti censiti</td>
-    </tr>
-	<%if (Utils.getEmptyString(errorMessage).equals("")) {%>    
-		<tr style="text-align: center;" >
-			<td style="padding: 5px;" class="VertSxAlta"><b>Operativit&agrave;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></td>
-			<td style="padding: 5px;" class="VertSxAlta"><b>Lavorato</b></td>
-			<td style="padding: 5px;" class="VertSxAlta"><b>AV PG</b></td>
-			<td style="padding: 5px;" class="VertSxAlta"><b>CAC PG</b></td>
-			<td style="padding: 5px;" class="VertSxAlta"><b>Rifiutato da CAC</b></td>
-			<td style="padding: 5px;" class="VertSxAlta"><b>AV Legale</b></td>
-			<td style="padding: 5px;" class="VertSxAlta"><b>CAC Legale</b></td>
-			<td style="padding: 5px;" class="VertSxAlta"><b>Acc. Socio</b></td>
-			<td style="padding: 5px;" class="VertSxAlta"><b>Urgente</b></td>			
-			<td style="padding: 5px;" class="VertSxAlta"><b>Esid</b></td>
-			<td style="padding: 5px;" class="VertSxAlta"><b>Ragione sociale</b></td>
-			<td style="padding: 5px;" class="VertSxAlta"><b>Partita iva</b></td>
-			<td style="padding: 5px;" class="VertSxAlta"><b>Codice agente</b></td>
-			<td style="padding: 5px;" class="VertSxAlta"><b>B&B</b></td>
-			<td style="padding: 5px;" class="VertSxAlta"><b>Id soggetto</b></td>
-			<td style="padding: 5px;" class="VertSxAlta"><b>8 cifre</b></td>
-			<td style="padding: 5px;" class="VertSxAlta"><b>Id soggetto legale</b></td>
-			<td style="padding: 5px;" class="VertSxAlta"><b>8 cifre legale</b></td>	
-			<td style="padding: 5px;" class="VertSxAlta"><b>Legale gi&agrave; collegato</b></td>
-			<td style="padding: 5px;" class="VertSxAlta"><b>Id Doc Legale</b></td>
-			<td style="padding: 5px;" class="VertSxAlta"><b>Data censimento</b></td>
-			<td style="padding: 5px;" class="VertSxAlta"><b>Data stipula</b></td>			
-			<td style="padding: 5px;" class="VertSxAlta"><b>Barcode contratto</b></td>
-			<td style="padding: 5px;" class="VertSxAlta"><b>Barcode qa</b></td>
-			<td style="padding: 5px;" class="VertSxAlta"><b>Barcode easynolo</b></td>
-			<td style="padding: 5px;" class="VertSxAlta"><b>Barcode cartellino firma</b></td>
-			<td style="padding: 5px;" class="VertSxAlta"><b>Est. p.v.</b></td>
-			<td style="padding: 5px;" class="VertSxAlta"><b>Manual Entry</b></td>
-			<td style="padding: 5px;" class="VertSxAlta"><b>Qa Errato</b></td>
-			<td style="padding: 5px;" class="VertSxAlta"><b>Gruppo Commerciale</b></td>
-		</tr>
-		<% for (int i=0; i<lstCensitoItemList.size(); i++) {
-				CensitoItemList c = lstCensitoItemList.get(i); 
-				AppEseAdeguataVerifica av = c.getAppEseAdeguataVerifica();
-				%>
-				
-			<%if (c.getIsLavoratoSccQa().equals(new Long("0"))) {%>
-				<tr>
-			<%} else { %>
-				<tr style="color: gray;">
-			<%} %>
-				<td style="padding: 5px;" class="VertDxBassa">
+      	<td colspan="31" class="TitoloH2O">Elenco esercenti censiti</td>
+    </tr><tr style="text-align: center">
+			<td class="VertSxAlta"><b>Operatività&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></td>
+			<td class="VertSxAlta"><b>Lavorato</b></td>
+			<td class="VertSxAlta"><b>AV PG</b></td>
+			<td class="VertSxAlta"><b>CAC PG</b></td>
+			<td class="VertSxAlta"><b>Rifiutato da CAC</b></td>
+			<td class="VertSxAlta"><b>AV Legale</b></td>
+			<td class="VertSxAlta"><b>CAC Legale</b></td>
+			<td class="VertSxAlta"><b>Acc. Socio</b></td>
+			<td class="VertSxAlta"><b>Urgente</b></td>			
+			<td class="VertSxAlta"><b>Esid</b></td>
+			<td class="VertSxAlta"><b>Ragione sociale</b></td>
+			<td class="VertSxAlta"><b>Partita iva</b></td>
+			<td class="VertSxAlta"><b>Codice agente</b></td>
+			<td class="VertSxAlta"><b>B&amp;B</b></td>
+			<td class="VertSxAlta"><b>Id soggetto</b></td>
+			<td class="VertSxAlta"><b>8 cifre</b></td>
+			<td class="VertSxAlta"><b>Id soggetto legale</b></td>
+			<td class="VertSxAlta"><b>8 cifre legale</b></td>	
+			<td class="VertSxAlta"><b>Legale già collegato</b></td>
+			<td class="VertSxAlta"><b>Id Doc Legale</b></td>
+			<td class="VertSxAlta"><b>Data censimento</b></td>
+			<td class="VertSxAlta"><b>Data stipula</b></td>			
+			<td class="VertSxAlta"><b>Barcode contratto</b></td>
+			<td class="VertSxAlta"><b>Barcode qa</b></td>
+			<td class="VertSxAlta"><b>Barcode easynolo</b></td>
+			<td class="VertSxAlta"><b>Barcode cartellino firma</b></td>
+			<td class="VertSxAlta"><b>Est. p.v.</b></td>
+			<td class="VertSxAlta"><b>Manual Entry</b></td>
+			<td class="VertSxAlta"><b>Qa Errato</b></td>
+			<td class="VertSxAlta"><b>Gruppo Commerciale</b></td>
+		</tr><tr></tr><tr style="color: gray;"><td class="VertDxBassa">
 					
-					<%if ((! Utils.getEmptyString(c.getEsidQa()).equals("")) && (c.getIsQaAgenteErrato().equals(new Long("0")))) {%>
-						<sm:includeIfEventAllowed eventName="CensimentoQaCae">
-							<a href="<sm:getEventMainURL/>&esidQuestAr=<%= c.getEsidQa() %>&eventNameIndietro=Indietro">Quest AR Cae</a><br/>
-						</sm:includeIfEventAllowed>
-					<% } else if (c.isNewQuestionario()) {%>
-						<sm:includeIfEventAllowed eventName="QuestionarioAr">
-							<a href="<sm:getEventMainURL/>&esid=<%= c.getEsid() %>&questionarioType=<%=c.getQuestionarioType() %>">Quest AR Cae</a><br/>
-						</sm:includeIfEventAllowed>
-					<%} else {%>
-						Quest AR Cae<br/>
-					<%} %>
+					&lt;%if ((! Utils.getEmptyString(c.getEsidQa()).equals("")) &amp;&amp; (c.getIsQaAgenteErrato().equals(new Long("0")))) {%&gt;
+						<sm:includeifeventallowed eventname="CensimentoQaCae">
+							<a href="<sm:getEventMainURL/>&amp;esidQuestAr=<%= c.getEsidQa() %>&amp;eventNameIndietro=Indietro">Quest AR Cae</a><br>
+						</sm:includeifeventallowed>
+					&lt;% } else if (c.isNewQuestionario()) {%&gt;
+						<sm:includeifeventallowed eventname="QuestionarioAr">
+							<a href="<sm:getEventMainURL/>&amp;esid=<%= c.getEsid() %>&amp;questionarioType=<%=c.getQuestionarioType() %>">Quest AR Cae</a><br>
+						</sm:includeifeventallowed>
+					&lt;%} else {%&gt;
+						Quest AR Cae<br>
+					&lt;%} %&gt;
 		           
-					<sm:includeIfEventAllowed eventName="CensimentoSccCae">
-						<%if (! Utils.getEmptyString(c.getEsidScc()).equals("")) {%>
-							<a href="<sm:getEventMainURL/>&esidScc=<%= c.getEsidScc() %>">Scheda Cliente Cae</a><br/>
-						<%} else {%>
-							Scheda Cliente Cae<br/>
-						<%} %>					
-		            </sm:includeIfEventAllowed>
-					<sm:includeIfEventAllowed eventName="CRMAntiriciclaggio">
-						<%if (c.getIdSoggetto() != null) {%>
-							<a href="<sm:getEventMainURL/>&idSoggCRMAntiric=<%= c.getIdSoggetto() %>">Quest AR H2O</a><br/>
-						<%} else {%>
-							Quest AR H2O<br/>
-						<%} %>					
-		            </sm:includeIfEventAllowed>
-					<sm:includeIfEventAllowed eventName="CRMQuestionario">
-						<%if (c.getIdSoggetto() != null) {%>
-							<a href="<sm:getEventMainURL/>&idSoggCRMQuest=<%= c.getIdSoggetto() %>">Scheda Cliente H2O</a><br/>
-						<%} else {%>
-							Scheda Cliente H2O<br/>
-						<%} %>					
-		            </sm:includeIfEventAllowed>
-		            <%if (c.getIsLavoratoSccQa().equals(new Long("0"))) {%>		       
-			            <%if (av.getIsAdeguataVerificaAzDaAbilitare()) {%>	            
-							<sm:includeIfEventAllowed eventName="AdeguataVerificaAz">
-					        	<a href="<sm:getEventMainURL/>&idCensitoListAdVeAz=<%= c.getId() %>">Accettazione Az</a><br>
-					        </sm:includeIfEventAllowed>
-					    <%} %>
-						<sm:includeIfEventAllowed eventName="AdeguataVerificaPf">
-							<a href="<sm:getEventMainURL/>&idCensitoListAdVePf=<%= c.getId() %>">Accettazione Pf</a><br>
-				        </sm:includeIfEventAllowed>
-						<%for (int j=0; j<av.getLstQaSocioAbilitato().size(); j++) {%>
-							<sm:includeIfEventAllowed eventName="AdeguataVerificaPfSocio">
-								<a href="<sm:getEventMainURL/>&idAdegVerPfSocio=<%= av.getLstQaSocioAbilitato().get(j).getId_soci_dett() %>&esidPosition=<%= c.getEsid() %>">Accettazione Socio <%=av.getLstQaSocioAbilitato().get(j).getCodice_fiscale() %></a><br>
-					        </sm:includeIfEventAllowed>
-						<%}%>
-					<%} %>		
-		            <%if ((Utils.getEmptyString(c.getIdGruppo()).equals("02") == false) 
-		            		&& (Utils.getEmptyString(c.getIdGruppo()).equals("08") == false)) { %>
-			            <a href="#" onclick="window.open('/H2O/CaeCensimento/CensimentoPrintPdf.jsp?esid=<%= c.getEsid() %>&tipoContratto=POS','','')">Visualizza Contr Pos</a><br>
-			            <a href="#" onclick="window.open('/H2O/CaeCensimento/CensimentoPrintPdf.jsp?esid=<%= c.getEsid() %>&tipoContratto=QAR','','')">Visualizza Qar</a><br>
-			            <a href="#" onclick="window.open('/H2O/CaeCensimento/CensimentoPrintPdf.jsp?esid=<%= c.getEsid() %>&tipoContratto=EASYNOLO','','')">Visualizza Contr EN</a><br>
-					<%} %>					
-		        </td>
-				<%if (c.getIsLavoratoSccQa().equals(new Long("0"))) {%>
-					<td style="padding: 5px;" class="VertDxBassa">
-						<sm:includeIfEventAllowed eventName="CensitoListEditLavorato">
-							<input type="checkbox" name="<%="chkLavoratoSccQa" + c.getId()%>" onclick="CallAddress('<sm:getMainURL/>', '<sm:getEventParamName/>', '&idCensitoList=<%= c.getId() %>')">
-						</sm:includeIfEventAllowed>
-					</td>
-				<%} else { %>
-					<td style="padding: 5px;" class="VertDxBassa">
-						<sm:includeIfEventAllowed eventName="CensitoListEditLavorato">
-							<input type="checkbox" name="<%="chkLavoratoSccQa" + c.getId()%>" checked="checked" disabled="disabled" onclick="CallAddress('<sm:getMainURL/>', '<sm:getEventParamName/>', '&idCensitoList=<%= c.getId() %>')">
-						</sm:includeIfEventAllowed>
-					</td>
-				<%} %>
-	           	<%if (av.getPraticaAccclAz() != null) {%>
-	           		<td style="padding: 5px;" class="VertDxBassa"><%=av.getPraticaAccclAz().getStatoPratica()%></td>
-				<%} else { %>
-					<td style="padding: 5px;" class="VertDxBassa">&nbsp;</td>
-	           	<%} %>
-	           	<td style="padding: 5px;" class="VertDxBassa">
-	           		<% List<IParere> lstIParereAz = HelperAcccl.getParereByPratica(av.getPraticaAccclAz()); 
-					%>
-	           		<%for (int j=0; j<lstIParereAz.size(); j++) { %>
-	           			<%= lstIParereAz.get(j).getLivelloParere() %>:&nbsp;
-	           			<%if (lstIParereAz.get(j).isAccettato()) {%>
+					<sm:includeifeventallowed eventname="CensimentoSccCae">
+						&lt;%if (! Utils.getEmptyString(c.getEsidScc()).equals("")) {%&gt;
+							<a href="<sm:getEventMainURL/>&amp;esidScc=<%= c.getEsidScc() %>">Scheda Cliente Cae</a><br>
+						&lt;%} else {%&gt;
+							Scheda Cliente Cae<br>
+						&lt;%} %&gt;					
+		            </sm:includeifeventallowed>
+					<sm:includeifeventallowed eventname="CRMAntiriciclaggio">
+						&lt;%if (c.getIdSoggetto() != null) {%&gt;
+							<a href="<sm:getEventMainURL/>&amp;idSoggCRMAntiric=<%= c.getIdSoggetto() %>">Quest AR H2O</a><br>
+						&lt;%} else {%&gt;
+							Quest AR H2O<br>
+						&lt;%} %&gt;					
+		            </sm:includeifeventallowed>
+					<sm:includeifeventallowed eventname="CRMQuestionario">
+						&lt;%if (c.getIdSoggetto() != null) {%&gt;
+							<a href="<sm:getEventMainURL/>&amp;idSoggCRMQuest=<%= c.getIdSoggetto() %>">Scheda Cliente H2O</a><br>
+						&lt;%} else {%&gt;
+							Scheda Cliente H2O<br>
+						&lt;%} %&gt;					
+		            </sm:includeifeventallowed>
+		            &lt;%if (c.getIsLavoratoSccQa().equals(new Long("0"))) {%&gt;		       
+			            &lt;%if (av.getIsAdeguataVerificaAzDaAbilitare()) {%&gt;	            
+							<sm:includeifeventallowed eventname="AdeguataVerificaAz">
+					        	<a href="<sm:getEventMainURL/>&amp;idCensitoListAdVeAz=<%= c.getId() %>">Accettazione Az</a><br>
+					        </sm:includeifeventallowed>
+					    &lt;%} %&gt;
+						<sm:includeifeventallowed eventname="AdeguataVerificaPf">
+							<a href="<sm:getEventMainURL/>&amp;idCensitoListAdVePf=<%= c.getId() %>">Accettazione Pf</a><br>
+				        </sm:includeifeventallowed>
+						&lt;%for (int j=0; j<av.getlstqasocioabilitato().size(); j++)="" {%="">
+							<sm:includeifeventallowed eventname="AdeguataVerificaPfSocio">
+								<a href="<sm:getEventMainURL/>&amp;idAdegVerPfSocio=<%= av.getLstQaSocioAbilitato().get(j).getId_soci_dett() %>&amp;esidPosition=<%= c.getEsid() %>">Accettazione Socio &lt;%=av.getLstQaSocioAbilitato().get(j).getCodice_fiscale() %&gt;</a><br>
+					        </sm:includeifeventallowed>
+						&lt;%}%&gt;
+					&lt;%} %&gt;		
+		            &lt;%if ((Utils.getEmptyString(c.getIdGruppo()).equals("02") == false) 
+		            		&amp;&amp; (Utils.getEmptyString(c.getIdGruppo()).equals("08") == false)) { %&gt;
+			            <a href="#" onclick="window.open('/H2O/CaeCensimento/CensimentoPrintPdf.jsp?esid=<%= c.getEsid() %>&amp;tipoContratto=POS','','')">Visualizza Contr Pos</a><br>
+			            <a href="#" onclick="window.open('/H2O/CaeCensimento/CensimentoPrintPdf.jsp?esid=<%= c.getEsid() %>&amp;tipoContratto=QAR','','')">Visualizza Qar</a><br>
+			            <a href="#" onclick="window.open('/H2O/CaeCensimento/CensimentoPrintPdf.jsp?esid=<%= c.getEsid() %>&amp;tipoContratto=EASYNOLO','','')">Visualizza Contr EN</a><br>
+					&lt;%} %&gt;					
+		        </av.getlstqasocioabilitato().size();></td><td class="VertDxBassa">
+						<sm:includeifeventallowed eventname="CensitoListEditLavorato">
+							<input type="checkbox" name="<%=" chklavoratosccqa"="" +="" c.getid()%="">" onclick="CallAddress('<sm:getmainurl>', '<sm:geteventparamname>', '&amp;idCensitoList=&lt;%= c.getId() %&gt;')"&gt;
+						</sm:geteventparamname></sm:getmainurl></sm:includeifeventallowed>
+					</td><td class="VertDxBassa">
+						<sm:includeifeventallowed eventname="CensitoListEditLavorato">
+							<input type="checkbox" name="<%=" chklavoratosccqa"="" +="" c.getid()%="">" checked="checked" disabled="disabled" onclick="CallAddress('<sm:getmainurl>', '<sm:geteventparamname>', '&amp;idCensitoList=&lt;%= c.getId() %&gt;')"&gt;
+						</sm:geteventparamname></sm:getmainurl></sm:includeifeventallowed>
+					</td><td class="VertDxBassa">&lt;%=av.getPraticaAccclAz().getStatoPratica()%&gt;</td><td class="VertDxBassa">&nbsp;</td><td class="VertDxBassa">
+	           		&lt;% List<iparere> lstIParereAz = HelperAcccl.getParereByPratica(av.getPraticaAccclAz()); 
+					%&gt;
+	           		&lt;%for (int j=0; j<lstiparereaz.size(); j++)="" {="" %="">
+	           			&lt;%= lstIParereAz.get(j).getLivelloParere() %&gt;:&nbsp;
+	           			&lt;%if (lstIParereAz.get(j).isAccettato()) {%&gt;
 	           				accettato
-	           			<%} %>
+	           			&lt;%} %&gt;
 	           			<br>
-	           		<% } %>
-	           	</td>
-				<%if (av.getIsProdottoPosRifiutato()) {%>
-					<td style="padding: 5px;" class="VertDxBassa">Si</td>
-				<%} else { %>
-					<td style="padding: 5px;" class="VertDxBassa">No</td>
-				<%} %>			
-	           	<%if (av.getPraticaAccclPf() != null) {%>
-	           		<td style="padding: 5px;" class="VertDxBassa"><%=av.getPraticaAccclPf().getStatoPratica()%></td>
-				<%} else { %>
-					<td style="padding: 5px;" class="VertDxBassa">&nbsp;</td>
-	           	<%} %>
-	           	<td style="padding: 5px;" class="VertDxBassa">
-	           		<% List<IParere> lstIParerePf = HelperAcccl.getParereByPratica(av.getPraticaAccclPf()); 
-					%>
-	           		<%for (int j=0; j<lstIParerePf.size(); j++) { %>
-	           			<%= lstIParerePf.get(j).getLivelloParere() %>:&nbsp;
-	           			<%if (lstIParerePf.get(j).isAccettato()) {%>
+	           		&lt;% } %&gt;
+	           	</lstiparereaz.size();></iparere></td><td class="VertDxBassa">Si</td><td class="VertDxBassa">No</td><td class="VertDxBassa">&lt;%=av.getPraticaAccclPf().getStatoPratica()%&gt;</td><td class="VertDxBassa">&nbsp;</td><td class="VertDxBassa">
+	           		&lt;% List<iparere> lstIParerePf = HelperAcccl.getParereByPratica(av.getPraticaAccclPf()); 
+					%&gt;
+	           		&lt;%for (int j=0; j<lstiparerepf.size(); j++)="" {="" %="">
+	           			&lt;%= lstIParerePf.get(j).getLivelloParere() %&gt;:&nbsp;
+	           			&lt;%if (lstIParerePf.get(j).isAccettato()) {%&gt;
 	           				accettato
-	           			<%} %>
+	           			&lt;%} %&gt;
 	           			<br>
-	           		<% } %>
-	           	</td>
-	           	<td style="padding: 5px;" class="VertDxBassa"><table>
-				<%for (int j=0; j<av.getLstQaSocioAbilitato().size(); j++) {%>
-					<tr>
-		           	<%if (av.getLstQaSocioAbilitato().get(j).getPraticaAccclPf() != null) {%>
-		           		<td style="padding: 5px;" class="VertDxBassa">Socio <%=av.getLstQaSocioAbilitato().get(j).getCodice_fiscale()%> Stato: <%=av.getLstQaSocioAbilitato().get(j).getPraticaAccclPf().getStatoPratica()%></td>
-					<%} else { %>
-						<td style="padding: 5px;" class="VertDxBassa">Socio <%=av.getLstQaSocioAbilitato().get(j).getCodice_fiscale()%> Stato: </td>
-		           	<%} %>
-			           	<td style="padding: 5px;" class="VertDxBassa">
-			           		<% List<IParere> lstIParerePfSocio = HelperAcccl.getParereByPratica(av.getLstQaSocioAbilitato().get(j).getPraticaAccclPf()); 
-							%>
-			           		<%for (int z=0; z<lstIParerePfSocio.size(); z++) { %>
-			           			<%= lstIParerePfSocio.get(z).getLivelloParere() %>:&nbsp;
-			           			<%if (lstIParerePfSocio.get(z).isAccettato()) {%>
+	           		&lt;% } %&gt;
+	           	</lstiparerepf.size();></iparere></td>
+	           	<td class="VertDxBassa">
+				&lt;%for (int j=0; j<av.getlstqasocioabilitato().size(); j++)="" {%="">
+					</av.getlstqasocioabilitato().size();>
+		           	&lt;%if (av.getLstQaSocioAbilitato().get(j).getPraticaAccclPf() != null) {%&gt;
+		           		
+					&lt;%} else { %&gt;
+						
+		           	&lt;%} %&gt;
+			           	
+				&lt;%}%&gt;
+				<table><tbody><tr><td class="VertDxBassa">Socio &lt;%=av.getLstQaSocioAbilitato().get(j).getCodice_fiscale()%&gt; Stato: &lt;%=av.getLstQaSocioAbilitato().get(j).getPraticaAccclPf().getStatoPratica()%&gt;</td><td class="VertDxBassa">Socio &lt;%=av.getLstQaSocioAbilitato().get(j).getCodice_fiscale()%&gt; Stato: </td><td class="VertDxBassa">
+			           		&lt;% List<iparere> lstIParerePfSocio = HelperAcccl.getParereByPratica(av.getLstQaSocioAbilitato().get(j).getPraticaAccclPf()); 
+							%&gt;
+			           		&lt;%for (int z=0; z<lstiparerepfsocio.size(); z++)="" {="" %="">
+			           			&lt;%= lstIParerePfSocio.get(z).getLivelloParere() %&gt;:&nbsp;
+			           			&lt;%if (lstIParerePfSocio.get(z).isAccettato()) {%&gt;
 			           				accettato
-			           			<%} %>
+			           			&lt;%} %&gt;
 			           			<br>
-			           		<% } %>
-			           	</td>
-		           	</tr>
-				<%}%>
-				</table></td>
-	           	<% if(c.getIsInstalUrgente().equals(new Long("1"))) {%>
-	           		<td style="padding: 5px;" class="VertDxBassa">Si</td>
-	           	<%} else { %>
-	           		<td style="padding: 5px;" class="VertDxBassa">No</td>
-	           	<%} %>				
-				<td style="padding: 5px;" class="VertDxBassa"><%=c.getEsid()%></td>
-				<td style="padding: 5px;" class="VertDxBassa"><%=c.getRagioneSociale()%></td>
-				<td style="padding: 5px;" class="VertDxBassa"><%=c.getPartitaIva()%></td>
-				<td style="padding: 5px;" class="VertDxBassa"><%=c.getCodiceAgente()%></td>
-				<%if (c.getIsBedAndBreakfast().equals(Long.valueOf(0))) {%>
-					<td style="padding: 5px;" class="VertDxBassa">No</td>
-				<%} else { %>
-					<td style="padding: 5px;" class="VertDxBassa">Si</td>
-				<%} %>
-				<td style="padding: 5px;" class="VertDxBassa"><%=c.getIdSoggetto()%></td>
-				<td style="padding: 5px;" class="VertDxBassa"><%=c.getConto8cifre()%></td>
-				<td style="padding: 5px;" class="VertDxBassa"><%=c.getIdSoggettoPf()%></td>
-				<td style="padding: 5px;" class="VertDxBassa"><%=c.getConto8cifrePf()%></td>
-				<%if (av.getIsIdSoggettPfCollegatoIdSoggettoAz()) {%>
-					<td style="padding: 5px;" class="VertDxBassa">Si</td>
-				<%} else { %>
-					<td style="padding: 5px;" class="VertDxBassa">No</td>
-				<%} %>
-				<td style="padding: 5px;" class="VertDxBassa"><%=c.getId_doc_pf()%></td>					
-				<td style="padding: 5px;" class="VertDxBassa"><%=c.getDataInserimento()%></td>
-				<td style="padding: 5px;" class="VertDxBassa"><%=c.getDataFirma()%></td>
-				<td style="padding: 5px;" class="VertDxBassa"><%=c.getBarcodeContratto()%></td>
-				<td style="padding: 5px;" class="VertDxBassa"><%=c.getBarcodeQa()%></td>
-				<td style="padding: 5px;" class="VertDxBassa"><%=c.getBarcodeContrattoEN()%></td>
-				<td style="padding: 5px;" class="VertDxBassa"><%=c.getBarcodeCartellinoFirma()%></td>
-				<%if (c.getIsExtPuntoVendita().equals(new Long("0"))) {%>
-					<td style="padding: 5px;" class="VertDxBassa">No</td>
-				<%} else { %>
-					<td style="padding: 5px;" class="VertDxBassa">Si</td>
-				<%} %>
-				<%if ((c.getManualEntry() != null) && (c.getManualEntry().equals(new Long("1")))) { %>
-					<td style="padding: 5px;" class="VertDxBassa">Si</td>
-				<%} else { %>
-					<td style="padding: 5px;" class="VertDxBassa">No</td>
-				<%} %>				
-				<%if (c.getIsQaAgenteErrato().equals(new Long("1"))) { %>
-					<td style="padding: 5px;" class="VertDxBassa">Si</td>
-				<%} else { %>
-					<td style="padding: 5px;" class="VertDxBassa">&nbsp;</td>
-				<%} %>	
-				<td style="padding: 5px;" class="VertDxBassa"><%=c.getDescrizioneGruppo()%></td>
-			</tr>
-		<%} %>
-	<%} else {%>
-		<tr>
-			<td style="height: 35px; text-align: center; padding: 5px;" colspan="23" class="titolotab"  >
-				<img style="width: 25px; height: 22px; margin-left: 10px; margin-right: 10px; vertical-align: middle;" src="/img/h2o/triangolo.gif"   
-					><br/><%=errorMessage %>
+			           		&lt;% } %&gt;
+			           	</lstiparerepfsocio.size();></iparere></td>
+		           	</tr></tbody></table></td><td class="VertDxBassa">Si</td><td class="VertDxBassa">No</td><td class="VertDxBassa">&lt;%=c.getEsid()%&gt;</td>
+				<td class="VertDxBassa">&lt;%=c.getRagioneSociale()%&gt;</td>
+				<td class="VertDxBassa">&lt;%=c.getPartitaIva()%&gt;</td>
+				<td class="VertDxBassa">&lt;%=c.getCodiceAgente()%&gt;</td><td class="VertDxBassa">No</td><td class="VertDxBassa">Si</td><td class="VertDxBassa">&lt;%=c.getIdSoggetto()%&gt;</td>
+				<td class="VertDxBassa">&lt;%=c.getConto8cifre()%&gt;</td>
+				<td class="VertDxBassa">&lt;%=c.getIdSoggettoPf()%&gt;</td>
+				<td class="VertDxBassa">&lt;%=c.getConto8cifrePf()%&gt;</td><td class="VertDxBassa">Si</td><td class="VertDxBassa">No</td><td class="VertDxBassa">&lt;%=c.getId_doc_pf()%&gt;</td>					
+				<td class="VertDxBassa">&lt;%=c.getDataInserimento()%&gt;</td>
+				<td class="VertDxBassa">&lt;%=c.getDataFirma()%&gt;</td>
+				<td class="VertDxBassa">&lt;%=c.getBarcodeContratto()%&gt;</td>
+				<td class="VertDxBassa">&lt;%=c.getBarcodeQa()%&gt;</td>
+				<td class="VertDxBassa">&lt;%=c.getBarcodeContrattoEN()%&gt;</td>
+				<td class="VertDxBassa">&lt;%=c.getBarcodeCartellinoFirma()%&gt;</td><td class="VertDxBassa">No</td><td class="VertDxBassa">Si</td><td class="VertDxBassa">Si</td><td class="VertDxBassa">No</td><td class="VertDxBassa">Si</td><td class="VertDxBassa">&nbsp;</td><td class="VertDxBassa">&lt;%=c.getDescrizioneGruppo()%&gt;</td>
+			</tr><tr>
+			<td colspan="23" class="titolotab" style="height: 35px; text-align: center">
+				<img src="/img/h2o/triangolo.gif" hspace="10" style="width: 25px; height: 22px; text-align: absmiddle"><br>&lt;%=errorMessage %&gt;
 			</td>
 		</tr>
 	    <tr>
-	        <td >
-	            <br/>
+	        <td>
+	            <br>
 	        </td>
-	    </tr>	
-	<%} %>
-</table>
-<table style="text-align: center;" >
-    <tr>
-        <td >
-            <br/>
+	    </tr></tbody></table>
+<table style="text-align: center">
+    <tbody><tr>
+        <td>
+            <br>
         </td>
     </tr>
     <tr>
-		<td style="text-align: center; padding: 5px;"   class="VertDxBassa">
-			<sm:includeIfEventAllowed eventName="Indietro" eventDescription="Indietro">
-				<input type="Button" name="<sm:getEventParamName/>" value="<sm:getEventParamValue/>" 
-					style="cursor:hand" class="Bottone" onClick="JavaScript:CallAddress('<sm:getMainURL/>', '<sm:getEventParamName/>', '')">
-			</sm:includeIfEventAllowed>
+		<td class="VertDxBassa" style="text-align: center">
+			<sm:includeifeventallowed eventname="Indietro" eventdescription="Indietro">
+				<input type="Button" name="<sm:getEventParamName/>" value="<sm:getEventParamValue/>" style="cursor:hand" class="Bottone" onclick="JavaScript:CallAddress('<sm:getMainURL/>', '<sm:getEventParamName/>', '')">
+			</sm:includeifeventallowed>
 		</td>
 	</tr>
-</table>
-<%
+</tbody></table>
+&lt;%
 }
-%>
-</form>
-
-
-
+%&gt;
+</form></body></html>
 
 
     <script>
