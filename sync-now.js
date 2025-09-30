@@ -1,8 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const LegacyHTMLMapper = require('./legacy-html-mapper');
+const EnhancedLegacyHTMLMapper = require('./enhanced-legacy-mapper');
 
-console.log('🔄 Syncing JSP changes to preview with legacy HTML conversion...');
+console.log('🔄 Syncing JSP changes to preview with enhanced legacy HTML conversion...');
 
 // Function to find JSP files in JSPUnderConstruction folder
 function findJSPFile() {
@@ -52,8 +53,16 @@ try {
     
     if (bodyMatch) {
         bodyContent = bodyMatch[1].trim();
-        // Convert legacy HTML attributes to modern CSS
-        bodyContent = htmlMapper.processDocument(bodyContent);
+        // Convert legacy HTML attributes to modern CSS with Enhanced Mapper
+        const enhancedMapper = new EnhancedLegacyHTMLMapper();
+        bodyContent = enhancedMapper.processDocument(bodyContent);
+        
+        // Show conversion statistics
+        const stats = enhancedMapper.getStatistics();
+        if (stats.convertedElements > 0) {
+            console.log(`🎨 Enhanced conversion: ${stats.convertedElements}/${stats.totalElements} elements (${stats.conversionRate}%)`);
+            console.log(`📊 Detected: ${stats.detectedAttributes.join(', ')}`);
+        }
     }
     
     // Extract title if present

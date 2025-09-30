@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const chokidar = require('chokidar');
 const LegacyHTMLMapper = require('./legacy-html-mapper');
+const EnhancedLegacyHTMLMapper = require('./enhanced-legacy-mapper');
 
 console.log('🔥 Starting UNIVERSAL JSP Auto-Sync System with Legacy HTML Conversion...');
 
@@ -73,8 +74,16 @@ function syncJSPToPreview() {
         
         const bodyContent = bodyMatch[1].trim();
         
-        // Convert legacy HTML attributes to modern CSS
-        const modernBodyContent = htmlMapper.processDocument(bodyContent);
+        // Convert legacy HTML attributes to modern CSS with Enhanced Mapper
+        const enhancedMapper = new EnhancedLegacyHTMLMapper();
+        const modernBodyContent = enhancedMapper.processDocument(bodyContent);
+        
+        // Get conversion statistics
+        const stats = enhancedMapper.getStatistics();
+        if (stats.convertedElements > 0) {
+            console.log(`🎨 Enhanced conversion: ${stats.convertedElements}/${stats.totalElements} elements (${stats.conversionRate}%)`);
+            console.log(`📊 Detected attributes: ${stats.detectedAttributes.join(', ')}`);
+        }
         
         // Extract title if present
         const titleMatch = jspContent.match(/<title[^>]*>(.*?)<\/title>/s);

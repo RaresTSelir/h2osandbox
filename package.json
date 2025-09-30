@@ -28,6 +28,10 @@
     "start": "npm run dev",
     "serve": "npx browser-sync start --server --files \"preview.html,SuperCSS.css\" --port 3000",
     "sync-manual": "node sync-now.js",
+    "test": "node test-system-integration.js",
+    "test-mapper": "node test-enhanced-mapper.js",
+    "test-basic": "node test-mapper.js",
+    "validate-system": "npm run test && npm run sync-manual",
     "postinstall": "node -e \"console.log('\\n✅ Universal JSP Development Environment installed!\\n📁 Drop any .jsp file into JSPUnderConstruction/ folder\\n🚀 Run: npm run dev\\n')\""
   },
   "devDependencies": {
