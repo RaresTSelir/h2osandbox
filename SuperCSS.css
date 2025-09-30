@@ -1,0 +1,418 @@
+/**
+ * SuperCSS.css - Reconstructed CSS file for H2O Application
+ * Generated based on analysis of JSP files in CaeEsercente project
+ * 
+ * This file contains all CSS classes used throughout the JSP files
+ * organized by functionality and usage patterns.
+ */
+
+/* ===========================
+   LAYOUT & POSITIONING CLASSES
+   =========================== */
+
+/* Table cell alignment classes - Vertical Left/Right + Top/Bottom positioning */
+.VertSxAlta {
+    vertical-align: top;
+    text-align: left;
+    border: 1px solid #CCCCCC;
+    padding: 5px 8px;
+    background-color: #F0F8FF;
+    font-weight: bold;
+    color: #333333;
+}
+
+.VertSxBassa {
+    vertical-align: bottom;
+    text-align: left;
+    border: 1px solid #CCCCCC;
+    padding: 5px 8px;
+    background-color: #FFFFFF;
+    color: #333333;
+}
+
+.VertDxBassa {
+    vertical-align: bottom;
+    text-align: right;
+    border: 1px solid #CCCCCC;
+    padding: 5px 8px;
+    background-color: #FFFFFF;
+    color: #333333;
+}
+
+.VertDxAlta {
+    vertical-align: top;
+    text-align: right;
+    border: 1px solid #CCCCCC;
+    padding: 5px 8px;
+    background-color: #F0F8FF;
+    font-weight: bold;
+    color: #333333;
+}
+
+/* ===========================
+   TITLE CLASSES
+   =========================== */
+
+/* Main H2O title classes */
+.TitoloH2O {
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    padding: 8px 12px;
+    border: 1px solid #2E5C8A;
+    text-transform: uppercase;
+}
+
+.OrizTitoloH2O {
+    background-color: #5BA0F2;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 15px;
+    border: 2px solid #2E5C8A;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    text-transform: uppercase;
+}
+
+/* ===========================
+   TABLE STYLING CLASSES
+   =========================== */
+
+/* Tab-related table styling */
+.titolotab {
+    background-color: #E6F3FF;
+    color: #2E5C8A;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    padding: 8px 10px;
+    border: 1px solid #B8D4F0;
+    border-bottom: 2px solid #4A90E2;
+}
+
+.tabcontatti {
+    background-color: #F5F5F5;
+    color: #333333;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    padding: 6px 8px;
+    border: 1px solid #DDDDDD;
+    text-align: left;
+}
+
+.tabgr {
+    background-color: #EEEEEE;
+    color: #444444;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    padding: 4px 6px;
+    border: 1px solid #CCCCCC;
+    text-align: center;
+}
+
+.tabgrb {
+    background-color: #D6E7F0;
+    color: #2E5C8A;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 6px 8px;
+    border: 1px solid #B8D4F0;
+    text-align: center;
+}
+
+/* ===========================
+   FORM INPUT CLASSES
+   =========================== */
+
+/* Text input styling */
+.testocombo, .TestoCombo {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    color: #333333;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    padding: 4px 6px;
+    margin: 2px;
+    border-radius: 2px;
+}
+
+.testocombo:focus, .TestoCombo:focus {
+    border-color: #4A90E2;
+    background-color: #F8FCFF;
+    outline: none;
+    box-shadow: 0 0 3px rgba(74, 144, 226, 0.3);
+}
+
+/* ===========================
+   BUTTON CLASSES
+   =========================== */
+
+/* Standard button styling */
+.Bottone, .bottone {
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 6px 12px;
+    border: 1px solid #2E5C8A;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.Bottone:hover, .bottone:hover {
+    background-color: #5BA0F2;
+    border-color: #4A90E2;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.Bottone:active, .bottone:active {
+    background-color: #2E5C8A;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Generic button class */
+.btn {
+    background-color: #6C7B7F;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    padding: 8px 16px;
+    border: 1px solid #5A6B6F;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #7C8B8F;
+    border-color: #6C7B7F;
+}
+
+/* ===========================
+   MENU CLASSES
+   =========================== */
+
+/* Menu styling */
+.menu2 {
+    background-color: #E8F4FD;
+    color: #2E5C8A;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 5px 8px;
+    border: 1px solid #B8D4F0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* ===========================
+   SPECIAL STYLING CLASSES
+   =========================== */
+
+/* Date field styling */
+.dateField {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    color: #333333;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    padding: 4px 6px;
+    margin: 2px;
+    border-radius: 2px;
+    width: 100px;
+}
+
+.dateField:focus {
+    border-color: #4A90E2;
+    background-color: #F8FCFF;
+    outline: none;
+}
+
+/* Subtitle styling */
+.subtitle {
+    background-color: #FF4444;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-align: center;
+    margin: 5px 0;
+}
+
+/* Left border styling */
+.lbr {
+    border-left: 3px solid #4A90E2;
+    padding-left: 8px;
+}
+
+/* Row styling for dynamic content */
+.row_1, .row_2, .row_3 {
+    transition: background-color 0.3s ease;
+}
+
+.row_1:hover, .row_2:hover, .row_3:hover {
+    background-color: #F0F8FF;
+}
+
+/* ===========================
+   UTILITY CLASSES
+   =========================== */
+
+/* Common utility classes for spacing and display */
+.center {
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+/* ===========================
+   RESPONSIVE CONSIDERATIONS
+   =========================== */
+
+/* Basic responsive behavior for smaller screens */
+@media screen and (max-width: 768px) {
+    .OrizTitoloH2O {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+    
+    .TitoloH2O {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+    
+    .VertSxAlta, .VertSxBassa, .VertDxBassa, .VertDxAlta {
+        padding: 3px 5px;
+        font-size: 10px;
+    }
+    
+    .testocombo, .TestoCombo {
+        font-size: 10px;
+        padding: 3px 4px;
+    }
+    
+    .Bottone, .bottone, .btn {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+}
+
+/* ===========================
+   THEME CONSISTENCY
+   =========================== */
+
+/* Ensure consistent color scheme throughout */
+:root {
+    --primary-blue: #4A90E2;
+    --secondary-blue: #5BA0F2;
+    --dark-blue: #2E5C8A;
+    --light-blue: #E6F3FF;
+    --ultra-light-blue: #F0F8FF;
+    --border-gray: #CCCCCC;
+    --text-dark: #333333;
+    --text-medium: #444444;
+    --background-white: #FFFFFF;
+    --background-light: #F5F5F5;
+}
+
+/* Apply theme colors to all elements */
+table {
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+td, th {
+    font-family: Arial, sans-serif;
+}
+
+/* ===========================
+   PRINT STYLES
+   =========================== */
+
+@media print {
+    .Bottone, .bottone, .btn {
+        display: none;
+    }
+    
+    .OrizTitoloH2O, .TitoloH2O {
+        background-color: #FFFFFF !important;
+        color: #000000 !important;
+        border: 2px solid #000000 !important;
+    }
+    
+    .VertSxAlta, .VertSxBassa, .VertDxBassa, .VertDxAlta {
+        background-color: #FFFFFF !important;
+        color: #000000 !important;
+        border: 1px solid #000000 !important;
+    }
+}
+
+/* ===========================
+   ACCESSIBILITY IMPROVEMENTS
+   =========================== */
+
+/* Focus indicators for accessibility */
+*:focus {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .VertSxAlta, .TitoloH2O, .OrizTitoloH2O {
+        border-width: 2px;
+    }
+    
+    .testocombo, .TestoCombo {
+        border-width: 2px;
+    }
+    
+    .Bottone, .bottone, .btn {
+        border-width: 2px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .row_1, .row_2, .row_3 {
+        transition: none;
+    }
+    
+    .Bottone:hover, .bottone:hover, .btn:hover {
+        transition: none;
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "server": {
+    "baseDir": "./",
+    "index": "preview.html"
+  },
+  "files": ["preview.html", "SuperCSS.css"],
+  "port": 3000,
+  "ui": {
+    "port": 3001
+  },
+  "reloadDelay": 200,
+  "notify": false,
+  "open": true,
+  "logLevel": "info",
+  "logPrefix": "JSP Dev"
+}

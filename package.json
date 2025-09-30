@@ -1,0 +1,48 @@
+{
+  "name": "jsp-development-environment",
+  "version": "1.0.0",
+  "description": "Ultra-fast JSP development for H2O environment with live reload and optimized Browser Sync (primarily developed by Rares Tarniceru)",
+  "main": "optimized-jsp-watcher.js",
+  "keywords": [
+    "jsp",
+    "java",
+    "development",
+    "live-reload",
+    "browser-sync",
+    "hot-reload"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/jsp-development-environment.git"
+  },
+  "bugs": {
+    "url": "https://github.com/username/jsp-development-environment/issues"
+  },
+  "homepage": "https://github.com/username/jsp-development-environment#readme",
+  "scripts": {
+    "dev": "concurrently \"npm run jsp-watch\" \"npm run browser-sync\" --kill-others-on-fail",
+    "jsp-watch": "node universal-jsp-watcher.js",
+    "browser-sync": "npx browser-sync start --config optimized-bs-config.json",
+    "start": "npm run dev",
+    "serve": "npx browser-sync start --server --files \"preview.html,SuperCSS.css\" --port 3000",
+    "sync-manual": "node sync-now.js",
+    "postinstall": "node -e \"console.log('\\n✅ Universal JSP Development Environment installed!\\n📁 Drop any .jsp file into JSPUnderConstruction/ folder\\n🚀 Run: npm run dev\\n')\""
+  },
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "chokidar": "^3.5.3",
+    "concurrently": "^8.2.0",
+    "live-server": "^1.2.2",
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "htmlparser2": "^8.0.2",
+    "node-html-parser": "^7.0.1",
+    "posthtml": "^0.16.6",
+    "posthtml-parser": "^0.12.1",
+    "posthtml-render": "^3.0.0"
+  }
+}
