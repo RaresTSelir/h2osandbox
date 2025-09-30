@@ -51,7 +51,7 @@ npm run dev
 ## 📝 Cum să lucrezi:
 
 1. **Pornește development mode**: `npm run dev`
-2. **Editează**: `InserimentoNuovoMassimaleJSP.jsp`
+2. **Editează**: Orice fișier `.jsp` din folderul `JSPUnderConstruction/`
 3. **Salvează**: `Ctrl+S`
 4. **Vezi modificările**: Instant în browser!
 

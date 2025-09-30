@@ -33,8 +33,9 @@ jobs:
 
     - name: Verify files exist
       run: |
-        test -f "InserimentoNuovoMassimaleJSP.jsp"
+        test -f "universal-jsp-watcher.js"
+        test -f "legacy-html-mapper.js"
         test -f "SuperCSS.css"
         test -f "preview.html"
-        test -f "optimized-jsp-watcher.js"
+        test -f "sync-now.js"
       shell: bash

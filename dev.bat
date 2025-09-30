@@ -131,7 +131,7 @@ echo 🌐 Access URLs:
 echo   - Application: http://localhost:3010
 echo   - Browser Sync UI: http://localhost:3011
 echo.
-echo � Edit InserimentoNuovoMassimaleJSP.jsp and see changes instantly!
+echo 💡 Edit any .jsp file in JSPUnderConstruction/ and see changes instantly!
 echo.
 echo Press Ctrl+C to stop the development server
 echo.

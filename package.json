@@ -2,7 +2,7 @@
   "name": "jsp-development-environment",
   "version": "1.0.0",
   "description": "Ultra-fast JSP development for H2O environment with live reload and optimized Browser Sync (primarily developed by Rares Tarniceru)",
-  "main": "optimized-jsp-watcher.js",
+  "main": "universal-jsp-watcher.js",
   "keywords": [
     "jsp",
     "java",

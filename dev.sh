@@ -1,7 +1,10 @@
 #!/bin/bash
 
-echo "======================================="
-echo "   JSP DEVELOPMENT ENVIRONMENT"
+echo "=====================================echo -e "${CYAN}🌐 Access URLs:${NC}"
+echo "   - Application: http://localhost:3010"
+echo "   - Browser Sync UI: http://localhost:3011"
+echo ""
+echo -e "${YELLOW}💡 Edit any .jsp file in JSPUnderConstruction/ and see changes instantly!${NC}"cho "   JSP DEVELOPMENT ENVIRONMENT"
 echo "======================================="
 echo ""
 
